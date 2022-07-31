@@ -18,11 +18,13 @@
       <td>{{ client.birthdate }}</td>
       <td>{{ client.cpf }}</td>
       <td>{{ client.vehicle }}</td>
-      <td>
-        <a href="#" alt="Editar" [routerLink]="['/clients/edit-client', client.id]">
+      <td class="actions-buttons">
+        <a href="#" alt="Editar" class="btn btn-xs btn-info" [routerLink]="['/clients/edit-client', client.id]">
           <i class="bi bi-pencil-fill"></i>
         </a>
-        <i class="bi bi-trash3-fill"></i>
+        <a href="#" alt="Editar" class="btn btn-xs btn-danger" (click)="deleteClient($event, client)">
+          <i class="bi bi-trash3-fill"></i>
+        </a>
       </td>
     </tr>
     <tr *ngIf="clients.length === 0">

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormClientComponent } from './form-client.component';
+import { FormClientComponent } from './add-client.component';
 
 describe('FormClientComponent', () => {
   let component: FormClientComponent;

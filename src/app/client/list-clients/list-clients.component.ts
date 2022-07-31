@@ -23,4 +23,12 @@ export class ListClientsComponent implements OnInit {
   getAllClients(): Client[] {
     return this.clientService.getAllClients();
   }
+
+  deleteClient($event: any, client: Client): void {
+    $event.preventDefault();
+    if(confirm(`Realmente deseja excluir este cliente ${client.name} ?`)) {
+      this.clientService.deleteClient(client.id!);
+      this.clients = this.getAllClients();
+    }
+  }
 }

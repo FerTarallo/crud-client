@@ -10,7 +10,7 @@ import { ClientService } from '../services/client.service';
   templateUrl: './form-client.component.html',
   styleUrls: ['./form-client.component.css']
 })
-export class FormClientComponent implements OnInit {
+export class AddClientComponent implements OnInit {
   @ViewChild ('form') formClient! : NgForm;
   client! : Client;
 
@@ -24,9 +24,7 @@ export class FormClientComponent implements OnInit {
   }
 
   addClient(): void {
-    console.log("sadhjkjaaaaaaaaaaaash", this.client, this.formClient)
     if(this.client) {
-      console.log("sadhjkjash")
       this.clientService.addClient(this.client);
       this.client = new Client();
       this.router.navigate(['/clients']);
