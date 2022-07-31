@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Cadastro de novo cliente</h3>
 
-  <form [formGroup]="formClient">
+  <form form="NgForm">
     <div class="form-container">
       <div class="row">
         <div class="col-12 mt-2">
@@ -10,8 +10,8 @@
               type="text"
               class="form-control form-control-sm"
               name="name"
-              placeholder="Nome do Cliente"
-              formControlName="name"
+              [(ngModel)]="client.name"
+              #name="ngModel"
             />
           </div>
         </div>
@@ -22,8 +22,8 @@
               type="text"
               class="form-control form-control-sm"
               name="birthdate"
-              placeholder="Data de nascimento"
-              formControlName="birthdate"
+              [(ngModel)]="client.birthdate"
+              #birthday="ngModel"
               required
             />
           </div>
@@ -35,9 +35,9 @@
               type="text"
               class="form-control form-control-sm"
               name="cpf"
-              placeholder="CPF"
+              [(ngModel)]="client.cpf"
+              #cpf="ngModel"
               minlength="11"
-              formControlName="cpf"
               required
             />
           </div>
@@ -49,76 +49,71 @@
               type="text"
               class="form-control form-control-sm"
               name="cellphone"
-              placeholder="Celular"
-              formControlName="cellphone"
+              [(ngModel)]="client.cellphone"
+              #cellphone="ngModel"
               required
             />
           </div>
         </div>
+        <div class="col-6 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="street"
+            [(ngModel)]="client.street"
+            #street="ngModel"
+          />
+        </div>
 
-        <fieldset formGroupName="address">
-          <div class="row">
-            <div class="col-6 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="street"
-                placeholder="Rua"
-                formControlName="street"
-              />
-            </div>
+        <div class="col-2 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="number"
+            [(ngModel)]="client.number"
+            #number="ngModel"
+          />
+        </div>
 
-            <div class="col-2 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="number"
-                placeholder="Número"
-                formControlName="number"
-              />
-            </div>
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="district"
+            [(ngModel)]="client.district"
+            #district="ngModel"
+          />
+        </div>
 
-            <div class="col-4 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="district"
-                placeholder="Bairro"
-                formControlName="district"
-              />
-            </div>
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="city"
+            [(ngModel)]="client.city"
+            #city="ngModel"
+          />
+        </div>
 
-            <div class="col-4 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="city"
-                placeholder="Cidade"
-                formControlName="city"
-              />
-            </div>
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="state"
+            [(ngModel)]="client.state"
+            #state="ngModel"
+          />
+        </div>
 
-            <div class="col-4 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="state"
-                placeholder="Estado"
-                formControlName="state"
-              />
-            </div>
-
-            <div class="col-4 mt-2">
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                name="cep"
-                placeholder="CEP"
-                formControlName="cep"
-              />
-            </div>
-          </div>
-        </fieldset>
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="cep"
+            [(ngModel)]="client.cep"
+            #cep="ngModel"
+          />
+        </div>
 
         <div class="col-8 mt-2">
           <div class="form-group">
@@ -126,8 +121,8 @@
               type="text"
               class="form-control form-control-sm"
               name="vehicle"
-              placeholder="Veículo"
-              formControlName="vehicle"
+              [(ngModel)]="client.vehicle"
+              #vehicle="ngModel"
             />
           </div>
         </div>
@@ -137,7 +132,6 @@
             type="button"
             class="btn btn-dark btn-sm"
             (click)="addClient()"
-            [disabled]="formClient.invalid"
           >
             Cadastrar cliente
           </button>

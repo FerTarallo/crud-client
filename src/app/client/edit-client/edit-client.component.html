@@ -1,1 +1,158 @@
-<p>edit-client works!</p>
+
+<div class="container">
+  <h3>Cadastro de novo cliente</h3>
+
+  <form form="NgForm">
+    <div class="form-container">
+      <div class="row">
+        <div class="col-12 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="name"
+              [(ngModel)]="client.name"
+              #name="ngModel"
+            />
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="birthdate"
+              [(ngModel)]="client.birthdate"
+              #birthdate="ngModel"
+              required
+            />
+            <div *ngIf="birthdate.errors && (birthdate.dirty || birthdate.touched)" class="alert alert-danger">
+              <div [hidden]="!birthdate.errors?.['required']">Digite a data de nascimento do cliente.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="cpf"
+              [(ngModel)]="client.cpf"
+              #cpf="ngModel"
+              minlength="11"
+              required
+            />
+            <div *ngIf="cpf.errors && (cpf.dirty || cpf.touched)" class="alert alert-danger">
+              <div [hidden]="!cpf.errors?.['required']">Digite o CPF do cliente.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="cellphone"
+              [(ngModel)]="client.cellphone"
+              #cellphone="ngModel"
+              required
+            />
+            <div *ngIf="cellphone.errors && (cellphone.dirty || cellphone.touched)" class="alert alert-danger">
+              <div [hidden]="!cellphone.errors?.['required']">Digite o celular do cliente.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="street"
+            [(ngModel)]="client.street"
+            #street="ngModel"
+          />
+        </div>
+
+        <div class="col-2 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="number"
+            [(ngModel)]="client.number"
+            #number="ngModel"
+          />
+        </div>
+
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="district"
+            [(ngModel)]="client.district"
+            #district="ngModel"
+          />
+        </div>
+
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="city"
+            [(ngModel)]="client.city"
+            #city="ngModel"
+          />
+        </div>
+
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="state"
+            [(ngModel)]="client.state"
+            #state="ngModel"
+          />
+        </div>
+
+        <div class="col-4 mt-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="cep"
+            [(ngModel)]="client.cep"
+            #cep="ngModel"
+          />
+        </div>
+
+        <div class="col-8 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="vehicle"
+              [(ngModel)]="client.vehicle"
+              #vehicle="ngModel"
+            />
+          </div>
+        </div>
+
+        <div class="col-3 mt-2">
+          <button
+            type="button"
+            class="btn btn-dark btn-sm"
+            (click)="editClient()"
+          >
+            Atualizar cliente
+          </button>
+        </div>
+
+        <div class="col-1 mt-2">
+          <a class="btn btn-dark btn-sm" [routerLink]="['/clients']">
+            <i class="bi bi-arrow-left-circle-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

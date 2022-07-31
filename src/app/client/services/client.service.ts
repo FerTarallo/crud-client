@@ -26,6 +26,11 @@ export class ClientService {
     localStorage[LOCAL_STORAGE_KEY] = JSON.stringify(clients);
   }
 
+  findClientById(id: string): Client | undefined {
+    const clients: Client[] = this.getAllClients();
+    return clients.find(client => client.id === id);
+  }
+
   editClient(updatedClient: Client): void {
     const clients: Client[] = this.getAllClients();
 

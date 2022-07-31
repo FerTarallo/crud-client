@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { ClientService } from './services/client.service';
 
@@ -20,7 +20,7 @@ import { EditClientComponent } from './edit-client/edit-client.component';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     ClientService

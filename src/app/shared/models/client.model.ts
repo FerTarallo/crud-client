@@ -1,12 +1,3 @@
-interface Address {
-  street: string;
-  number: number;
-  district: string;
-  city: string;
-  state: string;
-  cep: string;
-}
-
 export class Client {
   constructor(
     public id?: string,
@@ -14,7 +5,12 @@ export class Client {
     public birthdate?: string,
     public cpf?: string,
     public cellphone?: string,
-    public address?: Address,
+    public street?: string,
+    public number?: number,
+    public district?: string,
+    public city?: string,
+    public state?: string,
+    public cep?: string,
     public vehicle?: string,
   ){}
 }
