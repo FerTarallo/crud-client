@@ -9,11 +9,12 @@ interface Address {
 
 export class Client {
   constructor(
-    public id: string,
-    public name: string,
-    public birthdate: string,
-    public cpf: string,
-    public address: Address,
-    public vehicle: string,
+    public id?: string,
+    public name?: string,
+    public birthdate?: string,
+    public cpf?: string,
+    public cellphone?: string,
+    public address?: Address,
+    public vehicle?: string,
   ){}
 }

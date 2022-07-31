@@ -1,0 +1,154 @@
+<div class="container">
+  <h3>Cadastro de novo cliente</h3>
+
+  <form [formGroup]="formClient">
+    <div class="form-container">
+      <div class="row">
+        <div class="col-12 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="name"
+              placeholder="Nome do Cliente"
+              formControlName="name"
+            />
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="birthdate"
+              placeholder="Data de nascimento"
+              formControlName="birthdate"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="cpf"
+              placeholder="CPF"
+              minlength="11"
+              formControlName="cpf"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="col-4 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="cellphone"
+              placeholder="Celular"
+              formControlName="cellphone"
+              required
+            />
+          </div>
+        </div>
+
+        <fieldset formGroupName="address">
+          <div class="row">
+            <div class="col-6 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="street"
+                placeholder="Rua"
+                formControlName="street"
+              />
+            </div>
+
+            <div class="col-2 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="number"
+                placeholder="Número"
+                formControlName="number"
+              />
+            </div>
+
+            <div class="col-4 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="district"
+                placeholder="Bairro"
+                formControlName="district"
+              />
+            </div>
+
+            <div class="col-4 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="city"
+                placeholder="Cidade"
+                formControlName="city"
+              />
+            </div>
+
+            <div class="col-4 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="state"
+                placeholder="Estado"
+                formControlName="state"
+              />
+            </div>
+
+            <div class="col-4 mt-2">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="cep"
+                placeholder="CEP"
+                formControlName="cep"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="col-8 mt-2">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="vehicle"
+              placeholder="Veículo"
+              formControlName="vehicle"
+            />
+          </div>
+        </div>
+
+        <div class="col-3 mt-2">
+          <button
+            type="button"
+            class="btn btn-dark btn-sm"
+            (click)="addClient()"
+            [disabled]="formClient.invalid"
+          >
+            Cadastrar cliente
+          </button>
+        </div>
+
+        <div class="col-1 mt-2">
+          <a class="btn btn-dark btn-sm" [routerLink]="['/clients']">
+            <i class="bi bi-arrow-left-circle-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

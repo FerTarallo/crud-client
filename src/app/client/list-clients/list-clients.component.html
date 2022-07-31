@@ -1,0 +1,30 @@
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Data de Nascimento</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Veículo</th>
+      <th scope="col">
+        <a class="btn btn-outline-light btn-sm" [routerLink]="['/clients/add-client']" routerLinkActive="active">
+          Novo cliente
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.name }}</td>
+      <td>{{ client.birthdate }}</td>
+      <td>{{ client.cpf }}</td>
+      <td>{{ client.vehicle }}</td>
+      <td>
+        <i class="bi bi-trash3-fill"></i>
+        <i class="bi bi-pencil-fill"></i>
+      </td>
+    </tr>
+    <tr *ngIf="clients.length === 0">
+      <td colspan="5">Não há clientes cadastrados.</td>
+    </tr>
+  </tbody>
+</table>
