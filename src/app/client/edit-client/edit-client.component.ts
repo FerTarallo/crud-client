@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client } from 'src/app/shared/models/client.model';
-import { ClientService } from '../services/client.service';
+import { NgForm } from '@angular/forms';
 
+import { ClientService } from '../services/client.service';
+import { VehicleService } from '../services/vehicle.service';
+
+import { Client } from 'src/app/shared/models/client.model';
 @Component({
   selector: 'app-edit-client',
   templateUrl: './edit-client.component.html',
@@ -12,18 +14,19 @@ import { ClientService } from '../services/client.service';
 export class EditClientComponent implements OnInit {
   @ViewChild("form") formClient!: NgForm;
   client!: Client;
+  vehicles: any[] = [];
 
   constructor(
     private clientService: ClientService,
+    private vehicleService: VehicleService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.vehicles = this.getVehicles();
     let id = this.route.snapshot.params['id'];
-    console.log(">>>> ID: ", id)
     const client = this.clientService.findClientById(id);
-    console.log(">>>>>> cliente:", client)
     if(client !== undefined) {
       this.client = client;
     }
@@ -38,6 +41,10 @@ export class EditClientComponent implements OnInit {
       console.log(">>>>>> cliente:", this.client)
       this.router.navigate(['/clients']);
     }
+  }
+
+  getVehicles(): any[] {
+    return this.vehicleService.getVehicles();
   }
 
 }

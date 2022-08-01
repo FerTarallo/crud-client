@@ -5,6 +5,7 @@ import { ClientModule } from './client/client.module';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     ClientModule,
     FormsModule,
   ],

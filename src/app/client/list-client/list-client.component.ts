@@ -6,14 +6,14 @@ import { Client } from 'src/app/shared/models/client.model';
 
 @Component({
   selector: 'app-list-clients',
-  templateUrl: './list-clients.component.html',
-  styleUrls: ['./list-clients.component.css']
+  templateUrl: './list-client.component.html',
+  styleUrls: ['./list-client.component.css']
 })
-export class ListClientsComponent implements OnInit {
+export class ListClientComponent implements OnInit {
   clients: Client[] = [];
 
   constructor(
-    private clientService: ClientService,
+    private clientService: ClientService
   ) { }
 
   ngOnInit(): void {
